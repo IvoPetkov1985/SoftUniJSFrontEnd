@@ -73,3 +73,29 @@ fancy([
     'Bruce Willis',
     'Tom Holland'
 ]);
+
+function solveMap(arrayOfStrings) {
+    let movieStars = new Map();
+
+    for (let name of arrayOfStrings) {
+        movieStars.set(name, name.length);
+    }
+
+    for (let [name, num] of movieStars) {
+        console.log(`Name: ${name} -- Personal Number: ${num}`);
+    }
+}
+
+solveMap([
+    'Silas Butler',
+    'Adnaan Buckley',
+    'Juan Peterson',
+    'Brendan Villarreal'
+]);
+
+solveMap([
+    'Samuel Jackson',
+    'Will Smith',
+    'Bruce Willis',
+    'Tom Holland'
+]);
