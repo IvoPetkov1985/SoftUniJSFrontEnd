@@ -19,3 +19,21 @@ stringSubstring('javascript',
 stringSubstring('python',
     'JavaScript is the best programming language'
 );
+
+function solve(word, text) {
+    let pattern = new RegExp(`\\b${word}\\b`, "gi");
+    
+    if (pattern.test(text)) {
+        return word;
+    }
+
+    return `${word} not found!`
+}
+
+console.log(solve('javascript',
+    'JavaScript is the best programming language'
+));
+
+console.log(solve('python',
+    'JavaScript is the best programming language'
+));
