@@ -41,3 +41,28 @@ function solve(inputNum) {
 
 console.log(solve(1000435));
 console.log(solve(3495892137259234));
+
+function solveWithArray(inputNum) {
+    const evenFilter = x => x % 2 === 0;
+    const oddFilter = x => x % 2 !== 0;
+    const evenSum = calculateSum(inputNum, evenFilter);
+    const oddSum = calculateSum(inputNum, oddFilter);
+
+    return printResult(oddSum, evenSum);
+
+    function printResult(odd, even) {
+        console.log(`Odd sum = ${odd}, Even sum = ${even}`);
+    }
+
+    function calculateSum(number, filter) {
+        return number
+            .toString()
+            .split("")
+            .map(Number)
+            .filter(filter)
+            .reduce((a, x) => a + x, 0);
+    }
+}
+
+solveWithArray(1000435);
+solveWithArray(3495892137259234);
