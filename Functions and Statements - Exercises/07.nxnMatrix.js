@@ -24,3 +24,12 @@ function solve(number) {
 
 solve(4);
 solve(2);
+
+function solve2(num) {
+    const line = new Array(num).fill(num).join(" ");
+    return new Array(num).fill(line).join("\n");
+}
+
+console.log(solve2(5));
+console.log(solve2(7));
+console.log(solve2(2));

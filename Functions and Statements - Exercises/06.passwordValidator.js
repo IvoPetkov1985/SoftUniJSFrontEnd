@@ -59,3 +59,37 @@ function passwordValidator(password) {
 passwordValidator('logIn');
 passwordValidator('MyPass123');
 passwordValidator('Pa$s$s');
+
+function solve(password) {
+    const isLengthValid = p => p.length >= 6 && p.length <= 10;
+    const isAlphaNumeric = p => /^[A-Za-z0-9]+$/.test(p);
+    const containsAsLeastTwoDigits = p => p
+        .split("")
+        .filter(char => Number.isInteger(Number(char)))
+        .length >= 2;
+
+    let isPasswordValid = true;
+
+    if (!isLengthValid(password)) {
+        isPasswordValid = false;
+        console.log("Password must be between 6 and 10 characters");
+    }
+
+    if (!isAlphaNumeric(password)) {
+        isPasswordValid = false;
+        console.log("Password must consist only of letters and digits");
+    }
+
+    if (!containsAsLeastTwoDigits(password)) {
+        isPasswordValid = false;
+        console.log("Password must have at least 2 digits");
+    }
+
+    if (isPasswordValid) {
+        console.log("Password is valid");
+    }
+}
+
+solve('logIn');
+solve('MyPass123');
+solve('Pa$s$s');
