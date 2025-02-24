@@ -25,3 +25,26 @@ function charctersInRange(firstChar, secondChar) {
 charctersInRange('a', 'd');
 charctersInRange('#', ':');
 charctersInRange('C', '#');
+
+function solve(firstChar, secondChar) {
+    let charsArr = [firstChar, secondChar];
+    charsArr.sort();
+
+    let [start, end] = charsArr;
+
+    return getArrayOfChars(start, end).join(" ");
+
+    function getArrayOfChars(startChar, endChar) {
+        let resultArray = [];
+
+        for (let i = startChar.charCodeAt(0) + 1; i < endChar.charCodeAt(0); i++) {
+            resultArray.push(String.fromCharCode(i));
+        }
+
+        return resultArray;
+    }
+}
+
+console.log(solve('a', 'd'));
+console.log(solve('#', ':'));
+console.log(solve('C', '#'));
