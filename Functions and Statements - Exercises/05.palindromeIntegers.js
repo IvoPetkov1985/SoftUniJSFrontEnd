@@ -22,3 +22,17 @@ function palindromeIntegers(arrayOfInts) {
 
 console.log(palindromeIntegers([123, 323, 421, 121]));
 console.log(palindromeIntegers([32, 2, 232, 1010]));
+
+function solve(inputArray) {
+    inputArray.map(isPalindrome)
+        .forEach(x => console.log(x));
+
+    function isPalindrome(num) {
+        let numAsString = num.toString();
+        let reversedNum = numAsString.split("").reverse().join("");
+        return numAsString === reversedNum;
+    }
+}
+
+solve([123, 323, 421, 121]);
+solve([32, 2, 232, 1010]);
