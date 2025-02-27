@@ -6,3 +6,10 @@ function extractText() {
     text = text.split("\n").map(x => x.trim()).join("\n");
     inputElement.textContent = text;
 }
+
+function extractText() {
+    const textElement = document.querySelector("#items");
+    const areaElement = document.querySelector("#result");
+    const text = textElement.innerText;
+    areaElement.value = text;
+}
